@@ -4,7 +4,7 @@ import { type } from "os";
 // 语法：（变量、函数）：type
 // 原始类型 基本类型
 
-let str: string = "Hello Typescript";
+let str: string = "Hello Typescript112";
 let str1: string = '您好！'
 let bool: boolean = true;
 let bool1: boolean = false;
@@ -105,8 +105,64 @@ let endless1 = () => {
   }
 }
 
+// 数字枚举 反向映射
+enum Role {
+  Reporter = 33, // 从零开始， 可以自定义初始值
+  Developer,
+  Maintainer,
+  Owner
+}
+console.log(Role.Reporter)
+console.log(Role)
+
+// 字符串枚举 不支持反向映射 必须赋值
+
+enum Message {
+  success = '恭喜你考试成功',
+  error = "对不起你没有通过考试",
+  // hhh
+}
+
+console.log(Message)
+
+// 异构枚举
+ enum Answer {
+   N,
+   F,
+   Y = 'yes',
+ }
+
+ console.log(Answer)
+
+// 常量枚举 枚举仅可在属性、索引访问表达式、导入声明的右侧、导出分配或类型查询中使用。
+const enum Month {
+  Jan,
+  Feb,
+  Mar
+}
+// console.log(Month,'Month')
+let moth = [Month.Jan, Month.Feb]
+console.log(moth,"moth")
+
+// 枚举类型
+enum E { a, b }
+enum F { a =2, b = 3 }
+enum Z { a = 'hellow', b = 'world' }
+
+
+let e: E = 9
+let f: F = F.b
+let f1: F.a
+//
+let z: Z.a = Z.a
+let z1: Z = Z.b
+let z2: Z = Z.a
+console.log(z===z2)
 
 
 
-console.log(document.querySelectorAll('.app'))
+
+
+
+console.log(document.querySelectorAll('#app'))
 document.querySelectorAll('.app')[0].innerHTML = str;
